@@ -31,5 +31,13 @@ async function fetchRepos() {
         container.innerHTML = "<p>Failed to load projects.</p>";
     }
 }
+repoCard.innerHTML = `
+    <h3>${repo.name}</h3>
+    <p>${repo.description || "No description provided."}</p>
+    <div class="btn-group">
+        <a href="${repo.html_url}" target="_blank">Code</a>
+        <a href="https://${username}.github.io/${repo.name}" target="_blank">Live</a>
+    </div>
+`;
 
 fetchRepos();
